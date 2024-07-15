@@ -62,7 +62,6 @@
         "ecs:DescribeClusters",
         "ecs:ListAccountSettings",
         "ecs:ListClusters",
-        "elasticfilesystem:DescribeFileSystems",
         "eks:DescribeCluster",
         "eks:ListClusters",
         "elasticache:DescribeCacheClusters",
