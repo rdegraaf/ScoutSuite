@@ -5,7 +5,13 @@
                 "enabled": true,
                 "level": "danger"
             }
+        ],
+        "awslambda-runtime-deprecated.json": [
+            {
+                "enabled": true,
+                "level": "warning"
+            }
         ]
     },
-    "about": "regression test"
+    "about": "extra test rules"
 }
