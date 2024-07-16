@@ -1,0 +1,19 @@
+{
+    "description": "Lambda Function Using Deprecated Runtime",
+    "rationale": "Deprecated Lambda runtimes no longer receive security updates.",
+    "remediation": "Switch to a newer, supported runtime.",
+    "references": [
+        "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html"
+    ],
+    "dashboard_name": "Functions",
+    "path": "awslambda.regions.id.functions.id",
+    "conditions": [
+        "and",
+        [
+            "runtime_deprecated",
+            "true",
+            ""
+        ]
+    ],
+    "class_suffix": "runtime_deprecated"
+}

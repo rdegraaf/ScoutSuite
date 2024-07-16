@@ -16,6 +16,12 @@
                 "level": "warning"
             }
         ],
+        "awslambda-runtime-deprecated.json": [
+            {
+                "enabled": true,
+                "level": "warning"
+            }
+        ],
         "cloudformation-stack-with-role.json": [
             {
                 "enabled": true,
