@@ -1,0 +1,11 @@
+{
+    "about": "This ruleset enforces the rules of the App Defense Alliance's Cloud Profile, version 1.0.  See <https://github.com/appdefensealliance/ASA-WG/blob/main/Cloud%20App%20and%20Config%20Profile/Cloud%20App%20and%20Config%20Specification.md> for details.",
+    "rules": {
+        "awslambda-runtime-deprecated.json": [
+            {
+                "enabled": true,
+                "level": "danger"
+            }
+        ]
+    }
+}
