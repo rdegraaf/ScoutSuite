@@ -91,7 +91,7 @@ def pass_condition(b, test, a):
 
     # Empty tests
     elif test == 'empty':
-        result = ((type(b) == dict and b == {}) or (type(b) == list and b == []) or (type(b) == list and b == [None]))
+        result = ((type(b) == dict and b == {}) or (type(b) == list and b == []) or (type(b) == list and b == [None]) or (type(b) == str and len(b.strip()) == 0))
     elif test == 'notEmpty':
         result = (not pass_condition(b, 'empty', 'a'))
     elif test == 'null':
@@ -122,6 +122,10 @@ def pass_condition(b, test, a):
         result = a.lower() in map(str.lower, b)
     elif test == 'withoutKeyCaseInsensitive':
         result = a.lower() not in map(str.lower, b)
+    elif test == 'withValue':
+        result = ((a in b) and (not pass_condition(b[a], 'null', '')) and (not pass_condition(b[a], 'empty', '')))
+    elif test == 'withoutValue':
+        result = (not pass_condition(b, 'withValue', a))
 
     # String test
     elif test == 'containString':

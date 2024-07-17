@@ -12,6 +12,18 @@
                 "enabled": true,
                 "level": "danger"
             }
+        ],
+        "account-contact-details-missing.json": [
+            {
+                "enabled": true,
+                "level": "danger"
+            }
+        ],
+        "account-security-contact-details-missing.json": [
+            {
+                "enabled": true,
+                "level": "danger"
+            }
         ]
     }
 }
