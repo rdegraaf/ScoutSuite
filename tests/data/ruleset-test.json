@@ -11,6 +11,12 @@
                 "enabled": true,
                 "level": "warning"
             }
+        ],
+        "iam-no-support-role.json": [
+            {
+                "enabled": true,
+                "level": "danger"
+            }
         ]
     },
     "about": "extra test rules"

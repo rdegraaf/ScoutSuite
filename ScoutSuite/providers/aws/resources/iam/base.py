@@ -78,6 +78,9 @@ class IAM(AWSCompositeResources):
                 return resource_id
 
     def _parse_permissions(self, policy_name, policy_document, policy_type, iam_resource_type, resource_name):
+        # Skip empty policies
+        if not policy_document:
+            return
         # Enforce list of statements (Github issue #99)
         if type(policy_document['Statement']) != list:
             policy_document['Statement'] = [policy_document['Statement']]

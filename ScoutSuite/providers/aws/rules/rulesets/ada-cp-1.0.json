@@ -6,6 +6,12 @@
                 "enabled": true,
                 "level": "danger"
             }
+        ],
+        "iam-no-support-role.json": [
+            {
+                "enabled": true,
+                "level": "danger"
+            }
         ]
     }
 }

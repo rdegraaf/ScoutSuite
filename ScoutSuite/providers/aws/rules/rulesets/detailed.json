@@ -657,7 +657,7 @@
         "iam-no-support-role.json": [
             {
                 "enabled": true,
-                "level": "danger"
+                "level": "warning"
             }
         ],
         "iam-password-policy-expiration-threshold.json": [

@@ -1,7 +1,7 @@
 {
-    "description": "No Authorized User to Manage Incidents with AWS Support",
-    "rationale": "The <samp>arn:aws:iam::aws:policy/AWSSupportAccess</samp> AWS Managed Policy was not found to be attached to any principal. There should be at least one user authorized to manage incidents with AWS Support.",
-    "remediation": "Attach the AWSSupportAccess to a role or group",
+    "description": "No Authorized Role to Manage Incidents with AWS Support",
+    "rationale": "The <samp>arn:aws:iam::aws:policy/AWSSupportAccess</samp> AWS Managed Policy was not found to be attached to any Role. There should be at least one Role authorized to manage incidents with AWS Support.",
+    "remediation": "Attach the AWSSupportAccess to a Role.",
     "compliance": [
         {
             "name": "CIS Amazon Web Services Foundations",
@@ -12,6 +12,16 @@
             "name": "CIS Amazon Web Services Foundations",
             "version": "1.2.0",
             "reference": "1.20"
+        },
+        {
+            "name": "CIS Amazon Web Services Foundations",
+            "version": "2.0.0",
+            "reference": "1.17"
+        },
+        {
+            "name": "ADA Cloud Profile",
+            "version": "1.0",
+            "reference": "2.2.1"
         }
     ],
     "dashboard_name": "Policies",
@@ -25,9 +35,17 @@
             "arn:aws:iam::aws:policy/AWSSupportAccess"
         ],
         [
-            "iam.policies.id.attached_to",
-            "empty",
-            ""
+            "or",
+            [
+                "iam.policies.id.attached_to",
+                "withoutKey",
+                "roles"
+            ],
+            [
+                "iam.policies.id.attached_to.roles",
+                "empty",
+                ""
+            ]
         ]
     ]
 }
