@@ -32,13 +32,13 @@ class TestScoutRulesProcessingEngine(unittest.TestCase):
         with open(os.path.join(self.test_dir, 'data/ruleset-test.json'), 'rt') as f:
             extra_ruleset = json.load(f)
 
-        ruleset = default_ruleset | extra_ruleset
-        for rule_file_name in ruleset['rules']:
-            self.rule_counters['found'] += 1
-            rule = ruleset['rules'][rule_file_name][0]
-            rule['enabled'] = True
-            print(rule_file_name)
-            self._test_rule(rule_file_name, rule)
+        for ruleset in [default_ruleset, extra_ruleset]:
+            for rule_file_name in ruleset['rules']:
+                self.rule_counters['found'] += 1
+                rule = ruleset['rules'][rule_file_name][0]
+                rule['enabled'] = True
+                print(rule_file_name)
+                self._test_rule(rule_file_name, rule)
 
         print('Existing  rules: %d' % self.rule_counters['found'])
         print('Processed rules: %d' % self.rule_counters['tested'])
