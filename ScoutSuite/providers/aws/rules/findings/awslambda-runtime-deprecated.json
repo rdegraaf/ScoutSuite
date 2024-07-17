@@ -2,6 +2,13 @@
     "description": "Lambda Function Using Deprecated Runtime",
     "rationale": "Deprecated Lambda runtimes no longer receive security updates.",
     "remediation": "Switch to a newer, supported runtime.",
+    "compliance": [
+        {
+            "name": "ADA Cloud Profile",
+            "version": "1.0",
+            "reference": "1.2.1"
+        }
+    ],
     "references": [
         "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html"
     ],
