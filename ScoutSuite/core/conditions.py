@@ -1,5 +1,6 @@
 import datetime
 import dateutil.parser
+import dateutil.utils
 import json
 import netaddr
 import re
@@ -216,6 +217,11 @@ def pass_condition(b, test, a):
     elif test == 'newerThan':
         age, threshold = __prepare_age_test(a, b)
         result = (age < threshold)
+    elif test == 'equalDate':
+        result = dateutil.utils.within_delta(
+            dateutil.parser.parse(str(b)).replace(tzinfo=None),
+            dateutil.parser.parse(str(a)).replace(tzinfo=None),
+            datetime.timedelta(minutes=10))
 
     # CIDR tests
     elif test == 'inSubnets':

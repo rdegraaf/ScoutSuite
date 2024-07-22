@@ -37,7 +37,7 @@ class TestScoutRulesProcessingEngine(unittest.TestCase):
                 self.rule_counters['found'] += 1
                 rule = ruleset['rules'][rule_file_name][0]
                 rule['enabled'] = True
-                print(rule_file_name)
+                #print(rule_file_name)
                 self._test_rule(rule_file_name, rule)
 
         print('Existing  rules: %d' % self.rule_counters['found'])

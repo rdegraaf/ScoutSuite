@@ -24,6 +24,12 @@
                 "enabled": true,
                 "level": "danger"
             }
+        ],
+        "iam-user-password-key-assigned-at-creation.json": [
+            {
+                "enabled": true,
+                "level": "danger"
+            }
         ]
     }
 }
