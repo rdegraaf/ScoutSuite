@@ -25,6 +25,12 @@
                 "level": "danger"
             }
         ],
+        "iam-root-account-with-active-keys.json": [
+            {
+                "enabled": true,
+                "level": "danger"
+            }
+        ],
         "iam-user-password-key-assigned-at-creation.json": [
             {
                 "enabled": true,
